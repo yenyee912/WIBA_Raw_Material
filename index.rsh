@@ -8,7 +8,7 @@ const commonInteract = {
   reportInventory: Fun([], UInt) // input:warehouse/ factory (0/ 1), get stock level?
 };
 
-const warehouseInterect = {
+const warehouseInteract = {
   ...commonInteract,
   deadline: UInt,
 
@@ -25,7 +25,7 @@ const warehouseInterect = {
 
 }
 
-const facoryInteract = {
+const factoryInteract = {
   ...commonInteract,
 
   acceptMaterial: Fun([UInt], Null),
@@ -33,8 +33,8 @@ const facoryInteract = {
 }
 
 export const main = Reach.App(() => {
-  const Warehouse = Participant("Warehouse", warehouseInterect);
-  const Factory = Participant("Factory", facoryInteract);
+  const Warehouse = Participant("Warehouse", warehouseInteract);
+  const Factory = Participant("Factory", factoryInteract);
   init();
 
   const informTimeout = () => {

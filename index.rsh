@@ -29,9 +29,9 @@ export const main = Reach.App(() => {
 
     const Factory= Participant('Factory', {
         ...commonInteract,
+        result: Bool,
         inventoryFactory: UInt,
-        // acceptMaterial: Fun([Bytes(100),Bytes(100),Bytes(100),Bytes(100),Bytes(100),UInt], Null)
-        acceptMaterial: Fun([Bytes(100),Bytes(100),Bytes(100),Bytes(100),Bytes(100),UInt], Bool)
+        acceptMaterial: Fun([Bytes(100),Bytes(100),Bytes(100),Bytes(100),Bytes(100),UInt], Null)
     })
 
     init()
@@ -60,9 +60,15 @@ export const main = Reach.App(() => {
 
     Factory.only(() => {
         const inventoryFactory = declassify(interact.inventoryFactory)
-        const result = declassify(interact.acceptMaterial(supplierID, supplierName, materialID, materialName, batchNumber, quantity));
+        interact.acceptMaterial(supplierID, supplierName, materialID, materialName, batchNumber, quantity);
     })
-    Factory.publish(inventoryFactory, result)
+    Factory.publish(inventoryFactory)
+    commit()
+
+    Factory.only(() => {
+        const result = declassify(interact.result)
+    })
+    Factory.publish(result)
     commit()
 
     each([Warehouse, Factory], () => {

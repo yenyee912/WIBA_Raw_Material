@@ -4,7 +4,7 @@ const exports = {};
 
 exports.Outcome = class extends React.Component {
   render() {
-    const {result} = this.props;
+    const {result} = this.state || {};
 
     if(result == true){
       return(

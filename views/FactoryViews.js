@@ -60,15 +60,18 @@ exports.AcceptMaterial = class extends React.Component {
     const {supplierID, supplierName, materialID, materialName, batchNumber, quantity, parent} = this.props;
     const {disabled} = this.state || {};
     return (
-      <div>
+      <div className='TransactionInfo'>
         Welcome to the warehouse's network.
-        Do you want to accept the raw material from warehouse with details as below:
-        <br /> Supplier ID: {supplierID} 
-        <br /> Supplier Name: {supplierName} 
-        <br /> Material ID: {materialID} 
-        <br /> Material Name: {materialName} 
-        <br /> Material Batch Number: {batchNumber} 
-        <br /> Quantity to be transferred: {quantity} 
+        Do you want to accept the raw material from warehouse with details as below: 
+        <pre>
+          <br />Supplier ID: {supplierID}
+          <br />Supplier Name: {supplierName}
+          <br />Material ID: {materialID}
+          <br />Material Name: {materialName}
+          <br />Material Batch Number: {batchNumber}
+        </pre>
+        Quantity to be transferred: {quantity}
+        <br />
         <br />
         <button
           disabled={disabled}

@@ -52,3 +52,13 @@ body {
     overflow-x: scroll;
     white-space: pre;
   }
+
+  .TransactionInfo{
+    text-align: center;
+  }
+
+  .TransactionInfo pre{
+    display: inline-block;
+    text-align: center;
+    width: 180%;
+  }

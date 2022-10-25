@@ -29,60 +29,61 @@ exports.Deploy = class extends React.Component {
         onChange={(e) => this.setState({inventoryWarehouse : e.currentTarget.value})}
         /> 
         <br />
-        SupplierID 
+        SupplierID: 
         <input
         type='text'
         onChange={(e) => this.setState({supplierID : e.currentTarget.value})}
         /> 
         <br />
-        SupplierName  
+        SupplierName:  
         <input
         type='text'
         onChange={(e) => this.setState({supplierName : e.currentTarget.value})}
         /> 
         <br />
         
-        StaffID 
+        StaffID: 
         <input
         type='text'
         onChange={(e) => this.setState({staffID : e.currentTarget.value})}
         /> 
         <br />
-        StaffName  
+        StaffName:   
         <input
         type='text'
         onChange={(e) => this.setState({staffName : e.currentTarget.value})}
         /> 
         <br />
-        MaterialID 
+        MaterialID: 
         <input
         type='text'
         onChange={(e) => this.setState({materialID : e.currentTarget.value})}
         /> 
         <br />
-        MaterialName  
+        MaterialName:   
         <input
         type='text'
         onChange={(e) => this.setState({materialName : e.currentTarget.value})}
         /> 
         <br />
-        Batch Number 
+        Batch Number:  
         <input
         type='text'
         onChange={(e) => this.setState({batchNumber: e.currentTarget.value})}
         /> 
         <br />
-        Quantity (integer)
+        Quantity (integer): 
         <input
         type='text'
         onChange={(e) => this.setState({quantity: e.currentTarget.value})}
         />
-        <br />
+        <br /><br />
         Deploy the smart contract
         <br />
         <button
           onClick={() => parent.deploy(inventoryWarehouse, supplierID, supplierName, staffID, staffName, materialID, materialName, batchNumber, quantity)}
         >Deploy</button>
+        <br />
       </div>
     );
   }

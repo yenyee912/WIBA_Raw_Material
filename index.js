@@ -100,7 +100,6 @@ class Factory extends commonInteract{
 
     async attach(inventoryFactory, ctcInfoStr){
         this.inventoryFactory = inventoryFactory
-        this.result = false
         const ctc = this.props.acc.contract(backend, JSON.parse(ctcInfoStr))
         this.setState({view: 'Attaching'})
         backend.Factory(ctc, this)
@@ -117,12 +116,9 @@ class Factory extends commonInteract{
         })
     }
     response(result){
-        this.result = result
-        this.state.resolveAcceptedP()
+        this.state.resolveAcceptedP(result)
         this.setState({view:'PublishResult'})
     }
-    
-
 }
 
 renderDOM(<App />)

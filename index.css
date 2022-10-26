@@ -13,19 +13,33 @@ body {
   }
   .App {
     text-align: center;
+    width:100%;
+    background-color: #425F57;
   }
   
-  .App-header {
-    background-color: #282c34;
+  .headerbar {
+    min-height: 15vh;
+    width:100%;
+    background: #749F82;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+  
+  .App-header { 
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    /* 
     align-items: center;
-    justify-content: center;
+    justify-content: center; */
     font-size: calc(10px + 2vmin);
     color: white;
   }
-  
+
   .App-link {
     color: #61dafb;
   }
@@ -35,9 +49,32 @@ body {
     width: 4em;
   }
   
-  button {
+   button {
     font-size: calc(10px + 2vmin);
+    background: #A8E890;
+    padding: 10px 15px 9px;
+    border-radius: 15px;
+    transition: all 250ms ease-in-out;
+    cursor: pointer;                 
+    
   }
+  button:hover {
+    background-color: #CFFF8D;
+  }
+  button:focus {
+    outline: none;
+  }
+
+  input[type=text]{
+    /* width: 100em; */
+    height: calc(10px + 2vmin);
+    font-size:calc(10px + 2vmin);
+    padding: 10px;
+  }
+  .form-box{
+    width: 90%;
+    border: dashed 1px #39e4b3;
+}
   
   textarea {
     font-size: calc(10px + 2vmin);

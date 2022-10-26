@@ -9,7 +9,9 @@ exports.Wrapper = class extends React.Component {
     const {content} = this.props;
     return (
       <div className="Attacher">
-        <h2>Attacher (Factory)</h2>
+        <div className="headerbar">
+            <b className="user">Welcome, Factory</b>
+        </div>
         {content}
       </div>
     );
@@ -38,8 +40,8 @@ exports.Attach = class extends React.Component {
                 <br />
                 <button
                     disabled={!ctcInfoStr}
-                    onClick={() => parent.attach(inventoryFactory, ctcInfoStr)}
-                >Attach</button>
+                    onClick={() => parent.attach(inventoryFactory, ctcInfoStr)}>
+                    Attach</button>
             </div>
         );
     }

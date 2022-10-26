@@ -22,67 +22,68 @@ exports.Deploy = class extends React.Component {
     const {parent} = this.props;
     const {inventoryWarehouse, supplierID, supplierName, staffID, staffName, materialID, materialName, batchNumber, quantity} = this.state || {};
     return (
-      <div>
-        Warehouse's current inventory number (integer):
+      <div className='form-box'>
+        Warehouse's current inventory number (integer):&nbsp;
         <input
         type='text'
-        onChange={(e) => this.setState({inventoryWarehouse : e.currentTarget.value})}
-        /> 
+        onChange={(e) => this.setState({inventoryWarehouse : e.currentTarget.value})}/>
+        <br/> 
         <br />
-        SupplierID 
+        SupplierID:&nbsp;
         <input
         type='text'
         onChange={(e) => this.setState({supplierID : e.currentTarget.value})}
         /> 
         <br />
-        SupplierName  
+        SupplierName:&nbsp;  
         <input
         type='text'
         onChange={(e) => this.setState({supplierName : e.currentTarget.value})}
         /> 
         <br />
         
-        StaffID 
+        StaffID:&nbsp; 
         <input
         type='text'
         onChange={(e) => this.setState({staffID : e.currentTarget.value})}
         /> 
         <br />
-        StaffName  
+        StaffName:&nbsp;
         <input
         type='text'
         onChange={(e) => this.setState({staffName : e.currentTarget.value})}
         /> 
         <br />
-        MaterialID 
+        MaterialID:&nbsp;
         <input
         type='text'
         onChange={(e) => this.setState({materialID : e.currentTarget.value})}
         /> 
         <br />
-        MaterialName  
+        MaterialName:&nbsp; 
         <input
         type='text'
         onChange={(e) => this.setState({materialName : e.currentTarget.value})}
         /> 
         <br />
-        Batch Number 
+        Batch Number:&nbsp;
         <input
         type='text'
         onChange={(e) => this.setState({batchNumber: e.currentTarget.value})}
         /> 
         <br />
-        Quantity (integer)
+        Quantity (integer):&nbsp;
         <input
         type='text'
         onChange={(e) => this.setState({quantity: e.currentTarget.value})}
         />
         <br />
+        <br />
         Deploy the smart contract
         <br />
         <button
-          onClick={() => parent.deploy(inventoryWarehouse, supplierID, supplierName, staffID, staffName, materialID, materialName, batchNumber, quantity)}
-        >Deploy</button>
+          onClick={() => parent.deploy(inventoryWarehouse, supplierID, supplierName, staffID, staffName, materialID, materialName, batchNumber, quantity)}>
+          Deploy</button>
       </div>
     );
   }

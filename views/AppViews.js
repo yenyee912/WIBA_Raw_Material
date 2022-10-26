@@ -1,4 +1,5 @@
 import React from 'react';
+import background from '../asset/background.jpg'
 
 const exports = {};
 
@@ -8,7 +9,7 @@ exports.Wrapper = class extends React.Component {
     return (
       <div className="App">
         <header className="App-header" id="root">
-          <h1>WIBA Raw Material Tracking</h1>
+          <h1>Raw Material Tracking System</h1>
           {content}
         </header>
       </div>
@@ -22,6 +23,7 @@ exports.ConnectAccount = class extends React.Component {
       <div>
         Please wait while we connect to your account.
         If this takes more than a few seconds, there may be something wrong.
+        <img className="background" src={background} alt="Homepage" />
       </div>
     )
   }
@@ -58,21 +60,20 @@ exports.selectRole = class extends React.Component {
     const {parent} = this.props;
     return (
       <div>
-        Please select a role:
+        <b className='headerbar'>
+          Please Select a Role:
+        </b>
         <br />
         <p>
             <button
-                onClick={() => parent.selectWarehouse()}
-            >Warehouse</button>
-            <br /> Deploy the contract.
+                onClick={() => parent.selectWarehouse()}>Warehouse</button>
+            <br />
         </p>
         <p>
             <button
-                onClick={() => parent.selectFactory()}
-            >Factory</button>
-            <br /> Attach to the warehouse's contract.
+                onClick={() => parent.selectFactory()}>Factory</button>
+            <br />
         </p>
-        
       </div>
     );
   }

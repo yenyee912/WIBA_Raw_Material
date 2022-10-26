@@ -9,7 +9,9 @@ exports.Wrapper = class extends React.Component {
     const {content} = this.props;
     return (
       <div className="Attacher">
-        <h2>Attacher (Factory)</h2>
+        <div className="headerbar">
+            <b className="user">Welcome, Factory</b>
+        </div>
         {content}
       </div>
     );

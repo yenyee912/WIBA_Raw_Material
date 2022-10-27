@@ -52,6 +52,10 @@ exports.Attaching = class extends React.Component {
         return (
         <div>
             Request to attach to Warehouse's network, please wait...
+          <div class="load">Loading
+          <span></span>
+          </div>
+          <div class="box"></div>
         </div>
         );
     }
@@ -101,7 +105,11 @@ exports.PublishResult = class extends React.Component {
     return (
       <div>
         Sending your response to blockchain. Please wait...
+        <div class="load">Loading
+          <span></span>
+        </div>
       </div>
+      
     );
   }
 }

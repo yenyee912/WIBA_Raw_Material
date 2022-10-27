@@ -1,4 +1,4 @@
-'reach 0.1'
+'reach 0.1';
 
 const commonInteract = {
   ...hasRandom,
@@ -65,9 +65,4 @@ export const main = Reach.App(() => {
     Factory.publish(inventoryFactory, result)
     commit()
 
-    each([Warehouse, Factory], () => {
-        interact.seeOutcome(result)
-    })
-
-    exit();
-})
+});

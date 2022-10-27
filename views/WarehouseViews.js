@@ -94,7 +94,13 @@ exports.Deploy = class extends React.Component {
 exports.Deploying = class extends React.Component {
   render() {
     return (
-      <div>Deploying... please wait.</div>
+      <div>Deploying... please wait.
+        <div class="load">Loading
+          <span></span>
+        </div>
+        {/* <div class="box"></div> */}
+      </div>
+      
     );
   }
 }

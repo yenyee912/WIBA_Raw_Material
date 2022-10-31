@@ -118,6 +118,12 @@ body {
     width: 180%;
   }
 
+  .Outcome pre{
+    width: 20%;
+    display: inline-block;
+    margin: 0;
+  }
+
   .load
   {
     position:absolute;

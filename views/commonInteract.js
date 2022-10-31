@@ -4,11 +4,17 @@ const exports = {};
 
 exports.Outcome = class extends React.Component {
   render() {
-    const {result} = this.props;
+    const {result, factoryName, warehouseName, timestamp} = this.props;
 
     if(result == true){
       return(
-        <div>
+        <div className='Outcome'>
+          Transaction History: <br/>
+          <pre>{timestamp}</pre><br/> 
+          <pre>{warehouseName}</pre>&rarr; &emsp;
+          <pre>{factoryName}</pre>
+          <br/><br/>
+
           Request to transfer raw material from warehouse is accepted by the factory. 
           Warehouse should proceed the transfer shortly.
           Thank you for joining the network.

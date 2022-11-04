@@ -22,9 +22,14 @@ exports.Wrapper = class extends React.Component {
 exports.Deploy = class extends React.Component {
   render() {
     const {parent} = this.props;
-    const {inventoryWarehouse, supplierID, supplierName, staffID, staffName, materialID, materialName, batchNumber, quantity} = this.state || {};
+    const {warehouseName, inventoryWarehouse, supplierID, supplierName, staffID, staffName, materialID, materialName, batchNumber, quantity} = this.state || {};
     return (
       <div className='form-box'>
+        Warehouse's Name:&nbsp;
+        <input
+        type='text'
+        onChange={(e) => this.setState({warehouseName : e.currentTarget.value})}/>
+        <br/> 
         Warehouse's current inventory number (integer):&nbsp;
         <input
         type='text'
@@ -84,7 +89,7 @@ exports.Deploy = class extends React.Component {
         Deploy the smart contract
         <br />
         <button
-          onClick={() => parent.deploy(inventoryWarehouse, supplierID, supplierName, staffID, staffName, materialID, materialName, batchNumber, quantity)}>
+          onClick={() => parent.deploy(warehouseName, inventoryWarehouse, supplierID, supplierName, staffID, staffName, materialID, materialName, batchNumber, quantity)}>
           Deploy</button>
       </div>
     );

@@ -56,10 +56,10 @@ class commonInteract extends React.Component{
     informTimeout(){
         this.setState({view:'Timeout'})
     }
-    seeOutcome(result){
-        this.setState({view:'Outcome', result})
-    }
 
+    seeOutcome(result, factoryName, warehouseName, timestamp){
+        this.setState({view:'Outcome', result, factoryName, warehouseName, timestamp})
+    }
 }
 
 class Warehouse extends commonInteract{
@@ -68,8 +68,9 @@ class Warehouse extends commonInteract{
         this.state = {view: 'Deploy'}
     }
 
-    async deploy(inventoryWarehouse, supplierID, supplierName, staffID, staffName, materialID, materialName, batchNumber, quantity){
+    async deploy(warehouseName, inventoryWarehouse, supplierID, supplierName, staffID, staffName, materialID, materialName, batchNumber, quantity){
         this.timestamp = new Date().toLocaleString();
+        this.warehouseName = warehouseName
         this.inventoryWarehouse = inventoryWarehouse
         this.supplierID = supplierID
         this.supplierName = supplierName
@@ -98,7 +99,8 @@ class Factory extends commonInteract{
         this.state = {view: 'Attach'}
     }
 
-    async attach(inventoryFactory, ctcInfoStr){
+    async attach(factoryName, inventoryFactory, ctcInfoStr){
+        this.factoryName = factoryName
         this.inventoryFactory = inventoryFactory
         const ctc = this.props.acc.contract(backend, JSON.parse(ctcInfoStr))
         this.setState({view: 'Attaching'})

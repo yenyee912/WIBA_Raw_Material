@@ -21,9 +21,15 @@ exports.Wrapper = class extends React.Component {
 exports.Attach = class extends React.Component {
     render() {
         const {parent} = this.props;
-        const {inventoryFactory, ctcInfoStr} = this.state || {};
+        const {factoryName, inventoryFactory, ctcInfoStr} = this.state || {};
         return (
             <div>
+                Factory's Name:
+                <input
+                type='text'
+                onChange={(e) => this.setState({factoryName : e.currentTarget.value})}
+                /> 
+                <br />
                 Factory's current inventory number (integer):
                 <input
                 type='text'
@@ -40,7 +46,7 @@ exports.Attach = class extends React.Component {
                 <br />
                 <button
                     disabled={!ctcInfoStr}
-                    onClick={() => parent.attach(inventoryFactory, ctcInfoStr)}
+                    onClick={() => parent.attach(factoryName, inventoryFactory, ctcInfoStr)}
                 >Attach</button>
             </div>
         );

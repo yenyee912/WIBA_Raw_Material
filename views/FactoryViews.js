@@ -1,4 +1,5 @@
 import React from 'react';
+import BarcodeScannerComponent from "react-qr-barcode-scanner";
 import commonInteract from './commonInteract';
 
 const exports = {...commonInteract};
@@ -37,6 +38,14 @@ exports.Attach = class extends React.Component {
                     onChange={(e) => this.setState({ctcInfoStr: e.currentTarget.value})}
                     placeholder='{}'
                 />
+                <BarcodeScannerComponent
+                    width={500}
+                    height={500}
+                    onUpdate={(err, result) => {
+                      if (result) this.setState({ctcInfoStr:result.text});
+                      else console.log('Not found');
+                    }}
+                  />
                 <br />
                 <button
                     disabled={!ctcInfoStr}

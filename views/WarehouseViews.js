@@ -1,4 +1,5 @@
 import React from 'react';
+import QRCode from "react-qr-code";
 import commonInteract from './commonInteract';
 
 const exports = {...commonInteract};
@@ -123,9 +124,9 @@ exports.WaitingForAttacher = class extends React.Component {
       <div>
         Waiting for Attacher to join...
         <br /> Please give them this contract info:
-        <pre className='ContractInfo'>
-          {ctcInfoStr}
-        </pre>
+        <div className='ContractInfo'>
+          <QRCode value={ctcInfoStr} />
+        </div>
         <button
           onClick={(e) => this.copyToClipboard(e.currentTarget)}
         >Copy to clipboard</button>

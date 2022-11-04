@@ -83,11 +83,10 @@ body {
   
   .ContractInfo {
     font-size: calc(10px + 1vmin);
-    text-align: left;
+    text-align: center;
     width: 90vw;
-    height: 7em;
+    height: 20%;
     padding: 2vw;
-    overflow-x: scroll;
     white-space: pre;
   }
 
@@ -205,5 +204,4 @@ body {
       transform:rotate(405deg);
     }
   }
-  
   

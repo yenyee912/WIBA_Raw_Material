@@ -16,7 +16,10 @@ body {
     width:100%;
     background-color: #425F57;
   }
-
+  .background{
+    width: 100%;
+    height: auto;
+  }
   .headerbar {
     min-height: 15vh;
     width:100%;
@@ -46,6 +49,10 @@ body {
     width: 4em;
   }
   
+  input[type=file]{
+    size:auto;
+  }
+  
   button {
     font-size: calc(10px + 2vmin);
     background: #A8E890;
@@ -65,6 +72,7 @@ body {
     height: calc(10px + 2vmin);
     font-size:calc(10px + 2vmin);
     padding: 10px;
+    margin-top: 10px;
   }
   .form-box{
     padding-top: 5%;
@@ -83,29 +91,11 @@ body {
   
   .ContractInfo {
     font-size: calc(10px + 1vmin);
-    text-align: left;
+    justify-content: center;
     width: 90vw;
-    height: 7em;
-    padding: 2vw;
-    overflow-x: scroll;
+    height: 30%;
+    padding: 5%;
     white-space: pre;
-  }
-
-  .box{
-    width: 300px;
-    background: url(asset/box.png);
-    height: 200px;
-    animation:forward 25s linear infinite;
-    z-index: 9999999;
-    margin-bottom: -460px;
-  }
-  @keyframes walk{
-    0%{background-position: 0px;}
-    100%{background-position: 3000px;}
-  }
-  @keyframes forward{
-    0%{transform: translateX(100px);}
-    100%{transform: translateX(1900px);}
   }
 
   .TransactionInfo{
@@ -205,5 +195,4 @@ body {
       transform:rotate(405deg);
     }
   }
-  
   

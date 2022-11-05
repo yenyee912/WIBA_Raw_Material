@@ -98,14 +98,13 @@ body {
     white-space: pre;
   }
 
-  .TransactionInfo{
-    text-align: center;
-  }
 
   .TransactionInfo pre{
-    display: inline-block;
-    text-align: center;
-    width: 180%;
+    display: block;
+    font-family: monospace;
+    white-space: pre;
+    margin: 1em 0;
+    margin-left: 28em;
   }
 
   .Outcome pre{

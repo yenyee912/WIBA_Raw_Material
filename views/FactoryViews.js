@@ -124,7 +124,7 @@ exports.AcceptMaterial = class extends React.Component {
             this.setState({disabled: true});
             parent.response(true);
           }}
-        >Accept</button>
+        >Accept</button>&nbsp;
         <button
           disabled={disabled}
           onClick={() => {

@@ -4,8 +4,6 @@ import commonInteract from './commonInteract';
 
 const exports = {...commonInteract};
 
-const sleep = (milliseconds) => new Promise(resolve => setTimeout(resolve, milliseconds));
-
 exports.Wrapper = class extends React.Component {
   render() {
     const {content} = this.props;
@@ -23,13 +21,7 @@ exports.Wrapper = class extends React.Component {
 exports.Deploy = class extends React.Component {
   render() {
     const {parent} = this.props;
-    const {inventoryWarehouse, supplierID, supplierName, staffID, staffName, materialID, materialName, batchNumber, quantity} = this.state || {};
-    const disableButton = ()=>{
-      if (inventoryWarehouse, supplierID, supplierName, staffID, staffName, materialID, materialName, batchNumber, quantity||this.inventoryWarehouse> quantity){
-        return true;
-      }
-      else return false;
-    }
+    const {warehouseName, inventoryWarehouse, supplierID, supplierName, staffID, staffName, materialID, materialName, batchNumber, quantity} = this.state || {};
 
     return (
       <div className='form-box'>
@@ -97,8 +89,8 @@ exports.Deploy = class extends React.Component {
         <b>Deploy the smart contract</b>
         <br />
         <button
-          disabled={!inventoryWarehouse||!supplierID||!supplierName||!staffID|| !staffName|| !materialID|| !materialName||!batchNumber|| !quantity|| quantity>inventoryWarehouse}
-          onClick={() => parent.deploy(inventoryWarehouse, supplierID, supplierName, staffID, staffName, materialID, materialName, batchNumber, quantity)}>
+          disabled={!warehouseName||!inventoryWarehouse||!supplierID||!supplierName||!staffID|| !staffName|| !materialID|| !materialName||!batchNumber|| !quantity|| quantity>inventoryWarehouse}
+          onClick={() => parent.deploy(warehouseName,inventoryWarehouse, supplierID, supplierName, staffID, staffName, materialID, materialName, batchNumber, quantity)}>
           Deploy</button>
       </div>
     );
@@ -112,7 +104,6 @@ exports.Deploying = class extends React.Component {
         <div class="load">Loading
           <span></span>
         </div>
-        {/* <div class="box"></div> */}
       </div>
       
     );

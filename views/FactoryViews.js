@@ -23,7 +23,7 @@ exports.Wrapper = class extends React.Component {
 exports.Attach = class extends React.Component {  
     render() {
         const {parent} = this.props;
-        const {inventoryFactory, ctcInfoStr} = this.state || {};
+        const {factoryName, inventoryFactory, ctcInfoStr} = this.state || {};
         const readQrCode = (fileReaderResult)=>{
           let img = new Image();
           img.src = fileReaderResult;

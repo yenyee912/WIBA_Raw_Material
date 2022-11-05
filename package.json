@@ -1,5 +1,8 @@
 {
   "dependencies": {
+    "jsqr": "^1.4.0",
+    "png.js": "^0.2.1",
+    "qrcode.react": "^3.1.0",
     "react-qr-barcode-scanner": "^1.0.6",
     "react-qr-code": "^2.0.8"
   }

@@ -21,8 +21,7 @@ exports.ConnectAccount = class extends React.Component {
   render() {
     return (
       <div>
-        Please wait while we connect to your account.
-        If this takes more than a few seconds, there may be something wrong.
+        Connecting to your account...
         <img className="background" src={background} alt="Homepage" />
       </div>
     )

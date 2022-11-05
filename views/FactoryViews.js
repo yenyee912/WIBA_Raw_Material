@@ -89,7 +89,6 @@ exports.Attaching = class extends React.Component {
           <div class="load">Loading
           <span></span>
           </div>
-          <div class="box"></div>
         </div>
         );
     }

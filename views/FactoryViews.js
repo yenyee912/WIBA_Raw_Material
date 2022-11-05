@@ -48,13 +48,13 @@ exports.Attach = class extends React.Component {
         }
         return (
             <div>
-                Factory's Name:
+                Factory's Name:&nbsp;
                 <input
                 type='text'
                 onChange={(e) => this.setState({factoryName : e.currentTarget.value})}
                 /> 
                 <br />
-                Factory's current inventory number (integer):
+                Factory's current inventory number (integer):&nbsp;
                 <input
                 type='number'
                 onChange={(e) => this.setState({inventoryFactory : e.currentTarget.value})}

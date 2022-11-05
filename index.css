@@ -50,7 +50,7 @@ body {
   }
   
   input[type=file]{
-    size:auto;
+    font-size: calc(10px + 2vmin);
   }
   
   button {
@@ -110,7 +110,6 @@ body {
   .Outcome pre{
     width: 20%;
     display: inline-block;
-    margin: 0;
   }
 
   .load

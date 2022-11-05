@@ -35,7 +35,7 @@ exports.Outcome = class extends React.Component {
           Thank you for joining the network.
           <br/>
           <br/>
-          
+          <Checkmark size='128px' color='red' />
         </div>
       )
     }

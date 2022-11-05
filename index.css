@@ -98,23 +98,6 @@ body {
     white-space: pre;
   }
 
-  .box{
-    width: 300px;
-    background: url(asset/box.png);
-    height: 200px;
-    animation:forward 25s linear infinite;
-    z-index: 9999999;
-    margin-bottom: -460px;
-  }
-  @keyframes walk{
-    0%{background-position: 0px;}
-    100%{background-position: 3000px;}
-  }
-  @keyframes forward{
-    0%{transform: translateX(100px);}
-    100%{transform: translateX(1900px);}
-  }
-
   .TransactionInfo{
     text-align: center;
   }

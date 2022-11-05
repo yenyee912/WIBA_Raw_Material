@@ -1,5 +1,6 @@
 import React from 'react';
 import BarcodeScannerComponent from "react-qr-barcode-scanner";
+import jsQR from "jsqr";
 import commonInteract from './commonInteract';
 
 const exports = {...commonInteract};
@@ -19,10 +20,32 @@ exports.Wrapper = class extends React.Component {
   }
 }
 
-exports.Attach = class extends React.Component {
+exports.Attach = class extends React.Component {  
     render() {
         const {parent} = this.props;
-        const {factoryName, inventoryFactory, ctcInfoStr} = this.state || {};
+        const {inventoryFactory, ctcInfoStr} = this.state || {};
+        const readQrCode = (fileReaderResult)=>{
+          let img = new Image();
+          img.src = fileReaderResult;
+          img.onload = ()=>{
+            let imgWidth = img.width;
+            let imgHeight = img.height;
+            let c = document.createElement("canvas");
+            c.width = imgWidth ;
+            c.height = imgHeight;
+            let ctx = c.getContext("2d");
+            let o = ctx.drawImage(img,0,0,imgWidth,imgHeight);
+            let imageData = ctx.getImageData(0,0,imgWidth, imgHeight);
+            let code = jsQR(imageData.data, imgWidth, imgHeight);
+            if (code) this.setState({ctcInfoStr: code.data})
+            else console.log("QR code not found");
+          };
+        }
+        const onInputChange = (element)=>{
+          let fr = new FileReader();
+          fr.onload = ()=>readQrCode(fr.result);
+          fr.readAsDataURL(element.currentTarget.files[0]);
+        }
         return (
             <div>
                 Factory's Name:
@@ -33,22 +56,24 @@ exports.Attach = class extends React.Component {
                 <br />
                 Factory's current inventory number (integer):
                 <input
-                type='text'
+                type='number'
                 onChange={(e) => this.setState({inventoryFactory : e.currentTarget.value})}
                 /> 
                 <br />
                 <br />
-                Please paste the contract info to attach to Warehouse's network:
-                <textarea spellCheck="false"
-                    className='ContractInfo'
-                    onChange={(e) => this.setState({ctcInfoStr: e.currentTarget.value})}
-                    placeholder='{}'
-                />
+                Please scan the contract info to attach to Warehouse's network:
+                <br/>Upload file:&nbsp;
+                <input type="file" id="file" accept="image/png" onChange={onInputChange}/>
+                <br/>
+                OR
+                <br/>
                 <BarcodeScannerComponent
                     width={500}
                     height={500}
                     onUpdate={(err, result) => {
-                      if (result) this.setState({ctcInfoStr:result.text});
+                      if (result) {
+                        this.setState({ctcInfoStr:result.text});
+                      console.log(result)}
                       else console.log('Not found');
                     }}
                   />

@@ -1,5 +1,5 @@
 import React from 'react';
-import QRCode from "react-qr-code";
+import QRCode from "qrcode.react";
 import commonInteract from './commonInteract';
 
 const exports = {...commonInteract};
@@ -23,7 +23,14 @@ exports.Wrapper = class extends React.Component {
 exports.Deploy = class extends React.Component {
   render() {
     const {parent} = this.props;
-    const {warehouseName, inventoryWarehouse, supplierID, supplierName, staffID, staffName, materialID, materialName, batchNumber, quantity} = this.state || {};
+    const {inventoryWarehouse, supplierID, supplierName, staffID, staffName, materialID, materialName, batchNumber, quantity} = this.state || {};
+    const disableButton = ()=>{
+      if (inventoryWarehouse, supplierID, supplierName, staffID, staffName, materialID, materialName, batchNumber, quantity||this.inventoryWarehouse> quantity){
+        return true;
+      }
+      else return false;
+    }
+
     return (
       <div className='form-box'>
         Warehouse's Name:&nbsp;
@@ -33,7 +40,7 @@ exports.Deploy = class extends React.Component {
         <br/> 
         Warehouse's current inventory number (integer):&nbsp;
         <input
-        type='text'
+        type='number'
         onChange={(e) => this.setState({inventoryWarehouse : e.currentTarget.value})}/>
         <br/> 
         <br />
@@ -82,15 +89,16 @@ exports.Deploy = class extends React.Component {
         <br />
         Quantity (integer):&nbsp;
         <input
-        type='text'
+        type='number'
         onChange={(e) => this.setState({quantity: e.currentTarget.value})}
         />
         <br />
         <br />
-        Deploy the smart contract
+        <b>Deploy the smart contract</b>
         <br />
         <button
-          onClick={() => parent.deploy(warehouseName, inventoryWarehouse, supplierID, supplierName, staffID, staffName, materialID, materialName, batchNumber, quantity)}>
+          disabled={!inventoryWarehouse||!supplierID||!supplierName||!staffID|| !staffName|| !materialID|| !materialName||!batchNumber|| !quantity|| quantity>inventoryWarehouse}
+          onClick={() => parent.deploy(inventoryWarehouse, supplierID, supplierName, staffID, staffName, materialID, materialName, batchNumber, quantity)}>
           Deploy</button>
       </div>
     );
@@ -112,17 +120,28 @@ exports.Deploying = class extends React.Component {
 }
 
 exports.WaitingForAttacher = class extends React.Component {
-  async copyToClipboard(button) {
-    const {ctcInfoStr} = this.props;
-    navigator.clipboard.writeText(ctcInfoStr);
-    const origInnerHTML = button.innerHTML;
-    button.innerHTML = 'Copied!';
-    button.disabled = true;
-    await sleep(1000);
-    button.innerHTML = origInnerHTML;
-    button.disabled = false;
-  }
-
+  // async copyToClipboard(button) {
+  //   const {ctcInfoStr} = this.props;
+  //   navigator.clipboard.writeText(ctcInfoStr);
+  //   const origInnerHTML = button.innerHTML;
+  //   button.innerHTML = 'Copied!';
+  //   button.disabled = true;
+  //   await sleep(1000);
+  //   button.innerHTML = origInnerHTML;
+  //   button.disabled = false;
+  // }
+  downloadQR = () => {
+    const canvas = document.getElementById("code");
+    const pngUrl = canvas
+      .toDataURL("image/png")
+      .replace("image/png", "image/octet-stream");
+    let downloadLink = document.createElement("a");
+    downloadLink.href = pngUrl;
+    downloadLink.download = "code.png";
+    document.body.appendChild(downloadLink);
+    downloadLink.click();
+    document.body.removeChild(downloadLink);
+  };
   render() {
     const {ctcInfoStr} = this.props;
     return (
@@ -130,11 +149,18 @@ exports.WaitingForAttacher = class extends React.Component {
         Waiting for Attacher to join...
         <br /> Please give them this contract info:
         <div className='ContractInfo'>
-          <QRCode value={ctcInfoStr} />
+          {/* <QRCode 
+          id="code"
+          value={ctcInfoStr} /> */}
+          <QRCode 
+          id="code"
+          size={500}
+          level={"H"}
+          value={ctcInfoStr} />
         </div>
         <button
-          onClick={(e) => this.copyToClipboard(e.currentTarget)}
-        >Copy to clipboard</button>
+          onClick={this.downloadQR}
+        >Download QR code</button>
       </div>
     )
   }

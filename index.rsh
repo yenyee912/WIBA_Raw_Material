@@ -1,6 +1,6 @@
 'reach 0.1'
 
-const BYTES_NUM = 50
+const BYTES_NUM = 100
 
 const commonInteract = {
   ...hasRandom,

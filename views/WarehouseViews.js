@@ -33,6 +33,7 @@ exports.Deploy = class extends React.Component {
         Warehouse's current inventory number (integer):&nbsp;<br></br>
         <input
         type='number'
+        min={0}
         onChange={(e) => this.setState({inventoryWarehouse : e.currentTarget.value})}/>
         <br/> 
         <br />
@@ -82,6 +83,7 @@ exports.Deploy = class extends React.Component {
         Quantity (integer):&nbsp;<br></br>
         <input
         type='number'
+        min={0}
         onChange={(e) => this.setState({quantity: e.currentTarget.value})}
         />
         <br />

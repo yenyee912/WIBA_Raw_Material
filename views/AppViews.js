@@ -22,6 +22,7 @@ exports.ConnectAccount = class extends React.Component {
     return (
       <div>
         Connecting to your account...
+        <br></br>
         <img className="background" src={background} alt="Homepage" />
       </div>
     )

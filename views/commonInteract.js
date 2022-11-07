@@ -44,6 +44,7 @@ exports.Timeout = class extends React.Component {
   render() {
     return (
       <div>
+        <br/><br/>
         There's been a timeout. (Someone took too long.)
       </div>
     );

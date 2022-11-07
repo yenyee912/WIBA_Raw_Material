@@ -69,6 +69,7 @@ export const main = Reach.App(() => {
         const result = declassify(interact.acceptMaterial(supplierID, supplierName, materialID, materialName, batchNumber, quantity));
     })
     Factory.publish(factoryName, inventoryFactory, result)
+        .timeout(relativeTime(deadline), () => closeTo(Warehouse, informTimeout));
     commit()
 
     each([Warehouse, Factory], () => {

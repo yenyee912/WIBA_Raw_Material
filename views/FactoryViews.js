@@ -57,6 +57,7 @@ exports.Attach = class extends React.Component {
                 Factory's current inventory number (integer):<br></br>
                 <input
                 type='number'
+                min={0}
                 onChange={(e) => this.setState({inventoryFactory : e.currentTarget.value})}
                 /> 
                 <br />

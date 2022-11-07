@@ -25,61 +25,61 @@ exports.Deploy = class extends React.Component {
 
     return (
       <div className='form-box'>
-        Warehouse's Name:&nbsp;
+        Warehouse's Name:&nbsp;<br></br>
         <input
         type='text'
         onChange={(e) => this.setState({warehouseName : e.currentTarget.value})}/>
         <br/> 
-        Warehouse's current inventory number (integer):&nbsp;
+        Warehouse's current inventory number (integer):&nbsp;<br></br>
         <input
         type='number'
         onChange={(e) => this.setState({inventoryWarehouse : e.currentTarget.value})}/>
         <br/> 
         <br />
-        SupplierID:&nbsp;
+        Supplier ID:&nbsp;<br></br>
         <input
         type='text'
         onChange={(e) => this.setState({supplierID : e.currentTarget.value})}
         /> 
         <br />
-        SupplierName:&nbsp;  
+        Supplier's Name:&nbsp;<br></br>  
         <input
         type='text'
         onChange={(e) => this.setState({supplierName : e.currentTarget.value})}
         /> 
         <br />
         
-        StaffID:&nbsp; 
+        Staff ID:&nbsp; <br></br>
         <input
         type='text'
         onChange={(e) => this.setState({staffID : e.currentTarget.value})}
         /> 
         <br />
-        StaffName:&nbsp;
+        Staff's Name:&nbsp;<br></br>
         <input
         type='text'
         onChange={(e) => this.setState({staffName : e.currentTarget.value})}
         /> 
         <br />
-        MaterialID:&nbsp;
+        Material ID:&nbsp; <br></br>
         <input
         type='text'
         onChange={(e) => this.setState({materialID : e.currentTarget.value})}
         /> 
         <br />
-        MaterialName:&nbsp; 
+        Material Name:&nbsp; <br></br>
         <input
         type='text'
         onChange={(e) => this.setState({materialName : e.currentTarget.value})}
         /> 
         <br />
-        Batch Number:&nbsp;
+        Batch Number:&nbsp;<br></br>
         <input
         type='text'
         onChange={(e) => this.setState({batchNumber: e.currentTarget.value})}
         /> 
         <br />
-        Quantity (integer):&nbsp;
+        Quantity (integer):&nbsp;<br></br>
         <input
         type='number'
         onChange={(e) => this.setState({quantity: e.currentTarget.value})}
@@ -111,6 +111,16 @@ exports.Deploying = class extends React.Component {
 }
 
 exports.WaitingForAttacher = class extends React.Component {
+  // async copyToClipboard(button) {
+  //   const {ctcInfoStr} = this.props;
+  //   navigator.clipboard.writeText(ctcInfoStr);
+  //   const origInnerHTML = button.innerHTML;
+  //   button.innerHTML = 'Copied!';
+  //   button.disabled = true;
+  //   await sleep(1000);
+  //   button.innerHTML = origInnerHTML;
+  //   button.disabled = false;
+  // }
   downloadQR = () => {
     const canvas = document.getElementById("code");
     const pngUrl = canvas
@@ -127,9 +137,13 @@ exports.WaitingForAttacher = class extends React.Component {
     const {ctcInfoStr} = this.props;
     return (
       <div>
+        <br />
         Waiting for Attacher to join...
-        <br /> Please give them this contract info:
+        <br /> Please provide them this contract info:
         <div className='ContractInfo'>
+          {/* <QRCode 
+          id="code"
+          value={ctcInfoStr} /> */}
           <QRCode 
           id="code"
           size={500}

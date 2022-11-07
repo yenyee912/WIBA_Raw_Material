@@ -1,5 +1,4 @@
 import React from 'react';
-import { Checkmark } from 'react-checkmark'
 
 const exports = {};
 
@@ -11,19 +10,14 @@ exports.Outcome = class extends React.Component {
       return(
         <div className='Outcome'>
           Transaction History: <br/>
-          <pre>   {timestamp}</pre><br/> 
-          <pre>   {warehouseName}</pre>&rarr; &emsp;
-          <pre>   {factoryName}</pre>
+          <pre>{timestamp}</pre><br/> 
+          <pre>{warehouseName}</pre>&rarr; &emsp;
+          <pre>{factoryName}</pre>
           <br/><br/>
 
-          Request to transfer raw material from warehouse is accepted by the factory. 
-          <br/>
-          Warehouse should proceed the transfer shortly.
-          <br/>
+          Request to transfer raw material from warehouse is accepted by the factory. <br></br>
+          Warehouse will proceed the transfer shortly.<br></br>
           Thank you for joining the network.
-          <br/>
-          <br/>
-          <Checkmark size='128px' color='#749F82' />
         </div>
       )
     } 
@@ -31,11 +25,7 @@ exports.Outcome = class extends React.Component {
       return(
         <div>
           Request to transfer raw material from warehouse is rejected by the factory.
-          <br/>
           Thank you for joining the network.
-          <br/>
-          <br/>
-          <Checkmark size='128px' color='red' />
         </div>
       )
     }

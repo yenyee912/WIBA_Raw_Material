@@ -48,13 +48,13 @@ exports.Attach = class extends React.Component {
         }
         return (
             <div>
-                Factory's Name:&nbsp;
+                Factory's Name:
                 <input
                 type='text'
                 onChange={(e) => this.setState({factoryName : e.currentTarget.value})}
                 /> 
                 <br />
-                Factory's current inventory number (integer):&nbsp;
+                Factory's current inventory number (integer):<br></br>
                 <input
                 type='number'
                 onChange={(e) => this.setState({inventoryFactory : e.currentTarget.value})}
@@ -107,15 +107,16 @@ exports.AcceptMaterial = class extends React.Component {
     return (
       <div className='TransactionInfo'>
         Welcome to the warehouse's network.
-        Do you want to accept the raw material from warehouse with details as below: 
+        Do you want to accept the raw material from warehouse? <br></br> 
+        Below are the details: 
         <pre>
-          <br />Supplier ID: {supplierID}
-          <br />Supplier Name: {supplierName}
-          <br />Material ID: {materialID}
-          <br />Material Name: {materialName}
-          <br />Material Batch Number: {batchNumber}
+          Supplier ID: {supplierID} <br></br>
+          Supplier Name: {supplierName} <br></br>
+          Material ID: {materialID} <br></br>
+          Material Name: {materialName} <br></br>
+          Material Batch Number: {batchNumber} <br></br>
         </pre>
-        Quantity to be transferred: {quantity}
+        Quantity to be transferred : {quantity}
         <br />
         <br />
         <button
@@ -124,7 +125,7 @@ exports.AcceptMaterial = class extends React.Component {
             this.setState({disabled: true});
             parent.response(true);
           }}
-        >Accept</button>&nbsp;
+        >Accept</button>
         <button
           disabled={disabled}
           onClick={() => {

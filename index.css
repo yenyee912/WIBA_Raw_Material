@@ -46,11 +46,15 @@ body {
   
   input[type=number] {
     font-size: calc(10px + 2vmin);
+    padding: 10px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
     width: 4em;
+    text-align: center;
   }
   
   input[type=file]{
-    font-size: calc(10px + 2vmin);
+    size:auto;
   }
   
   button {
@@ -69,10 +73,12 @@ body {
     outline: none;
   }
   input[type=text]{
-    height: calc(10px + 2vmin);
-    font-size:calc(10px + 2vmin);
-    padding: 10px;
-    margin-top: 10px;
+    font-size: calc(10px + 2vmin);
+    width: 90%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    text-align: center;
   }
   .form-box{
     padding-top: 5%;
@@ -98,18 +104,20 @@ body {
     white-space: pre;
   }
 
+  .TransactionInfo{
+    text-align: center;
+  }
 
   .TransactionInfo pre{
-    display: block;
-    font-family: monospace;
-    white-space: pre;
-    margin: 1em 0;
-    margin-left: 28em;
+    display: inline-block;
+    text-align: center;
+    width: 150%;
   }
 
   .Outcome pre{
     width: 20%;
     display: inline-block;
+    margin: 0;
   }
 
   .load

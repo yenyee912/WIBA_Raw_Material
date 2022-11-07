@@ -111,16 +111,6 @@ exports.Deploying = class extends React.Component {
 }
 
 exports.WaitingForAttacher = class extends React.Component {
-  // async copyToClipboard(button) {
-  //   const {ctcInfoStr} = this.props;
-  //   navigator.clipboard.writeText(ctcInfoStr);
-  //   const origInnerHTML = button.innerHTML;
-  //   button.innerHTML = 'Copied!';
-  //   button.disabled = true;
-  //   await sleep(1000);
-  //   button.innerHTML = origInnerHTML;
-  //   button.disabled = false;
-  // }
   downloadQR = () => {
     const canvas = document.getElementById("code");
     const pngUrl = canvas
@@ -141,9 +131,6 @@ exports.WaitingForAttacher = class extends React.Component {
         Waiting for Attacher to join...
         <br /> Please provide them this contract info:
         <div className='ContractInfo'>
-          {/* <QRCode 
-          id="code"
-          value={ctcInfoStr} /> */}
           <QRCode 
           id="code"
           size={500}

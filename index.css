@@ -54,7 +54,7 @@ body {
   }
   
   input[type=file]{
-    size:auto;
+    font-size: calc(10px + 2vmin);
   }
   
   button {
@@ -109,15 +109,27 @@ body {
   }
 
   .TransactionInfo pre{
-    display: inline-block;
-    text-align: center;
-    width: 150%;
+    display: block;
+    font-family: monospace;
+    white-space: pre;
+    margin: 1em 0;
+    margin-left: 28em;
   }
 
-  .Outcome pre{
-    width: 20%;
-    display: inline-block;
+  .time{
+    text-align: center;
+    display: block;
+    white-space: pre;
     margin: 0;
+    margin-left: 16em;
+  }
+
+  .name{
+    text-align: center;
+    display: block;
+    white-space: pre;
+    margin: 0;
+    margin-left: 23em;
   }
 
   .load

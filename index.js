@@ -57,8 +57,9 @@ class commonInteract extends React.Component{
         this.setState({view:'Timeout'})
     }
 
-    seeOutcome(result, factoryName, warehouseName, timestamp){
-        this.setState({view:'Outcome', result, factoryName, warehouseName, timestamp})
+    seeOutcome(result, factoryName, warehouseName, timestamp, supplierID, supplierName, materialID, materialName, batchNumber, quantity){
+         const details  = "{Supplier ID: " + supplierID + ",Supplier Name: " + supplierName + ",Material ID: " + materialID + ",Material Name: " + materialName + ",Batch Number: " + batchNumber + ",Quantity: " + quantity + "}"; 
+        this.setState({view:'Outcome', result, factoryName, warehouseName, timestamp, details})
     }
 }
 

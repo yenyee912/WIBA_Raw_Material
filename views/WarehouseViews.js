@@ -9,8 +9,13 @@ exports.Wrapper = class extends React.Component {
     const {content} = this.props;
     return (
       <div className="Deployer">
-         <div className="headerbar">
+         <div className="header">
+          <br/>
             <b className="user">Welcome, Warehouse</b>
+            <br/>
+            <i>-- Trace the origin, control the quality --</i>
+            <br/>
+            <br/>
         </div>
         {content}
       </div>
@@ -28,7 +33,8 @@ exports.Deploy = class extends React.Component {
         Warehouse's Name:&nbsp;<br></br>
         <input
         type='text'
-        onChange={(e) => this.setState({warehouseName : e.currentTarget.value})}/>
+        onChange={(e) => this.setState({warehouseName : e.currentTarget.value})}
+        maxLength="110"/>
         <br/> 
         Warehouse's current inventory number (integer):&nbsp;<br></br>
         <input
@@ -41,12 +47,14 @@ exports.Deploy = class extends React.Component {
         <input
         type='text'
         onChange={(e) => this.setState({supplierID : e.currentTarget.value})}
+        maxLength="110"
         /> 
         <br />
         Supplier's Name:&nbsp;<br></br>  
         <input
         type='text'
         onChange={(e) => this.setState({supplierName : e.currentTarget.value})}
+        maxLength="110"
         /> 
         <br />
         
@@ -54,30 +62,35 @@ exports.Deploy = class extends React.Component {
         <input
         type='text'
         onChange={(e) => this.setState({staffID : e.currentTarget.value})}
+        maxLength="110"
         /> 
         <br />
         Staff's Name:&nbsp;<br></br>
         <input
         type='text'
         onChange={(e) => this.setState({staffName : e.currentTarget.value})}
+        maxLength="110"
         /> 
         <br />
         Material ID:&nbsp; <br></br>
         <input
         type='text'
         onChange={(e) => this.setState({materialID : e.currentTarget.value})}
+        maxLength="110"
         /> 
         <br />
         Material Name:&nbsp; <br></br>
         <input
         type='text'
         onChange={(e) => this.setState({materialName : e.currentTarget.value})}
+        maxLength="110"
         /> 
         <br />
         Batch Number:&nbsp;<br></br>
         <input
         type='text'
         onChange={(e) => this.setState({batchNumber: e.currentTarget.value})}
+        maxLength="110"
         /> 
         <br />
         Quantity (integer):&nbsp;<br></br>
@@ -102,7 +115,8 @@ exports.Deploy = class extends React.Component {
 exports.Deploying = class extends React.Component {
   render() {
     return (
-      <div>Deploying... please wait.
+      <div>  
+        <br/>Deploying... please wait.
         <div class="load">Loading
           <span></span>
         </div>

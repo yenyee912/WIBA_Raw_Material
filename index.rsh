@@ -1,12 +1,12 @@
 'reach 0.1'
 
-const BYTES_NUM = 100
+const BYTES_NUM = 110
 
 const commonInteract = {
   ...hasRandom,
   informTimeout: Fun([], Null),
   reportInventory: Fun([UInt], Null), // input:warehouse/ factory (0/ 1), get stock level?
-  seeOutcome: Fun([Bool,  Bytes(BYTES_NUM),  Bytes(BYTES_NUM),  Bytes(BYTES_NUM)], Null),
+  seeOutcome: Fun([Bool,  Bytes(BYTES_NUM),  Bytes(BYTES_NUM),  Bytes(BYTES_NUM), Bytes(BYTES_NUM),  Bytes(BYTES_NUM),  Bytes(BYTES_NUM), Bytes(BYTES_NUM),  Bytes(BYTES_NUM), UInt], Null),
 };
 
 export const main = Reach.App(() => {
@@ -73,7 +73,7 @@ export const main = Reach.App(() => {
     commit()
 
     each([Warehouse, Factory], () => {
-        interact.seeOutcome(result, factoryName, warehouseName, timestamp)
+        interact.seeOutcome(result, factoryName, warehouseName, timestamp, supplierID, supplierName, materialID, materialName, batchNumber, quantity)
     })
 
     exit();

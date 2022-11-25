@@ -11,8 +11,13 @@ exports.Wrapper = class extends React.Component {
     const {content} = this.props;
     return (
       <div className="Attacher">
-        <div className="headerbar">
+        <div className="header">
+          <br/>
             <b className="user">Welcome, Factory</b>
+            <br/>
+            <i>-- Trace the origin, control the quality --</i>
+            <br/>
+            <br/>
         </div>
         {content}
       </div>
@@ -53,6 +58,7 @@ exports.Attach = class extends React.Component {
                 <input
                 type='text'
                 onChange={(e) => this.setState({factoryName : e.currentTarget.value})}
+                maxLength="110"
                 /> 
                 <br />
                 Factory's current inventory number (integer):<br></br>
@@ -93,6 +99,7 @@ exports.Attaching = class extends React.Component {
     render() {
         return (
         <div>
+            <br/>
             Request to attach to Warehouse's network, please wait...
           <div class="load">Loading
           <span></span>
@@ -146,6 +153,7 @@ exports.PublishResult = class extends React.Component {
   render() {
     return (
       <div>
+          <br/>
         Sending your response to blockchain. Please wait...
         <div class="load">Loading
           <span></span>

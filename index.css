@@ -31,6 +31,16 @@ body {
     align-items: center;
     overflow: hidden;
   }
+  .header {
+    min-height: 13vh;
+    width:100%;
+    background: #749F82;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+    
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
   
   .App-header { 
     min-height: 100vh;

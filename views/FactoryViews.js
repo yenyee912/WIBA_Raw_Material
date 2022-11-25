@@ -49,6 +49,7 @@ exports.Attach = class extends React.Component {
         return (
             <div>
                 Factory's Name:
+                <br/>
                 <input
                 type='text'
                 onChange={(e) => this.setState({factoryName : e.currentTarget.value})}
